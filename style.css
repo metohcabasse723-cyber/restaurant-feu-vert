@@ -213,7 +213,7 @@ footer{
 	align-items: center;
 }
 
-@media(min-width: 768px){
+@media(min-width: 768px) and (max-width: 980px){
 	
 	.header{
 		display: flex;
@@ -225,6 +225,8 @@ footer{
 display: none;
 
 }
+
+	
 	
 	
 	nav a{
