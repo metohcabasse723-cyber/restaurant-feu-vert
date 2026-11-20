@@ -1,235 +1,281 @@
-*{
+* {
 	padding: 0;
 	margin: 0;
 	box-sizing: border-box;
 	text-decoration: none;
 	list-style: none;
 	scroll-behavior: smooth;
-	
 }
 
-body{
-	font-size: sans-serif;
-	background: #f7f2cb;
+body {
+	font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+	font-size: 16px;
+	line-height: 1.6;
+	background-color: #faf6ee;
+	color: #2b1d14;
 }
 
-
-.header{
+/* --- HEADER --- */
+.header {
 	display: flex;
-	width: 100%;
-	height: auto;
-	align-items: center;
-	justify-content: space-around;
-	gap: 10px;
 	flex-direction: column;
-	background: #e7e712;
-	padding: 20px 0;
+	align-items: center;
+	justify-content: space-between;
+	gap: 14px;
+	width: 100%;
+	background-color: #2b1d14;
+	padding: 16px 24px;
 	position: sticky;
+	top: 0;
 	z-index: 1000;
+	box-shadow: 0 4px 16px rgba(43, 29, 20, 0.25);
 }
 
-	.logo{
-		color: #ffa16b;
-		font-size: 2rem;
-	}
-	
-nav{
+.logo {
+	color: #e09f3e;
+	font-size: 1.9rem;
+	font-weight: 800;
+	letter-spacing: 0.5px;
+}
+
+nav {
 	display: flex;
+	flex-wrap: wrap;
 	align-items: center;
 	justify-content: center;
-	gap: 26px;
+	gap: 22px;
 }
 
-nav a{
-	color: #ffa16b;
-	font-size: large;
+nav a {
+	color: #faf6ee;
+	font-size: 1rem;
+	font-weight: 500;
+	transition: color 0.25s ease;
 }
 
-nav a:hover{
-	color: blue;
-	text-decoration: underline;
-	
+nav a:hover {
+	color: #e09f3e;
 }
 
-
-.button{
-	background: #ff7a87;
+/* --- BOUTONS --- */
+.button {
+	display: inline-block;
+	background-color: #d94e34;
+	color: #ffffff;
 	border: none;
-	border-radius: 20px;
-	box-shadow: 2px 2px 4px black;
-	padding: 5px;
-	font-size: large;
-	color: white;
-}
-.button:hover{
-	background: blue;
+	border-radius: 30px;
+	padding: 10px 24px;
+	font-size: 1rem;
+	font-weight: 600;
+	cursor: pointer;
+	box-shadow: 0 4px 12px rgba(217, 78, 52, 0.35);
+	transition: background-color 0.25s ease, transform 0.2s ease, box-shadow 0.25s ease;
 }
 
-.hero{
-	background-image: url("br.jpg");
+.button:hover {
+	background-color: #b53922;
+	transform: translateY(-2px);
+	box-shadow: 0 6px 16px rgba(217, 78, 52, 0.45);
+}
+
+/* --- HERO --- */
+.hero {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	gap: 16px;
+	background-image: linear-gradient(rgba(25, 16, 10, 0.62), rgba(25, 16, 10, 0.62)), url("br.jpg");
 	background-position: center;
-	background-attachment: scroll;
 	background-size: cover;
 	background-repeat: no-repeat;
-	padding: 20px 0;
+	padding: 40px 20px;
 	text-align: center;
 	width: 100%;
-	height: 90vh;
+	min-height: 85vh;
 }
 
-.hero h1{
-	color: #ff7a87;
-    margin: 10px 0;
-	font-weight: 1000;
-	
+.hero h1 {
+	color: #ffffff;
+	font-size: clamp(2.2rem, 5vw, 3.8rem);
+	font-weight: 800;
+	line-height: 1.2;
+	text-shadow: 0 2px 10px rgba(0, 0, 0, 0.4);
 }
 
-
-.hero p{
-	color: #ff7a87;
-    margin: 10px 0;
-	font-size: 2rem;
+.hero p {
+	color: #f3e9d7;
+	font-size: clamp(1.1rem, 2.5vw, 1.5rem);
+	max-width: 680px;
+	margin-bottom: 10px;
 }
 
-.menue{
-	border: 1px solid white;
-	margin: 20px 0;
-	box-shadow: 2px 2px 20px white;
-	
-}
-
-.menue p{
+/* --- SECTION MENU --- */
+.menue {
+	max-width: 1200px;
+	margin: 40px auto;
+	padding: 24px 20px;
 	text-align: center;
-	font-size: large;
-	margin-top: 10px;
-	
-	
 }
 
-.menue h2{
-	text-align: center;
-	padding: 10px;
+.menue h2 {
+	font-size: 2.1rem;
+	font-weight: 800;
+	color: #2b1d14;
+	margin-bottom: 8px;
 }
 
-.container{
+.menue p {
+	font-size: 1.05rem;
+	color: #635147;
+	max-width: 650px;
+	margin: 0 auto;
+}
+
+/* --- GRILLE DES CARTES --- */
+.container {
 	display: grid;
-	grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-	gap: 20px;
-	background: #b0aa73;
+	grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+	gap: 28px;
+	padding: 40px 24px;
+	background-color: #efe7d6;
 }
-.card{
-	background: #f7f2cb;
+
+.card {
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	gap: 16px;
+	background-color: #ffffff;
 	width: 100%;
 	text-align: center;
-	box-shadow: 2px 4px 20px;
-	border: 1px solid black;
+	border-radius: 20px;
+	padding: 18px;
+	box-shadow: 0 8px 24px rgba(43, 29, 20, 0.08);
 	overflow: hidden;
-	padding: 20px;
-	border-top-left-radius: 20px;
-	border-top-right-radius: 20px;
-	
-	
+	transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
-.card:hover{
-	transform: translateY(10px);
-	transform: scale(1.03);
-		box-shadow: 2px 4px 20px;
+
+.card:hover {
+	transform: translateY(-6px);
+	box-shadow: 0 14px 32px rgba(43, 29, 20, 0.15);
 }
-.card img{
+
+.card img {
 	width: 100%;
-	height: 50vh;
+	height: 240px;
 	object-fit: cover;
-	border-radius: 20px;
+	border-radius: 14px;
+	transition: transform 0.35s ease;
 }
 
-.card:hover img{
-	scale(1.02)
+.card:hover img {
+	transform: scale(1.04);
 }
 
-.card div{
-	font-size: large;
-	border: 1px solid white;
-	background-color: #f7f2cb;
-	height: auto;
-	border-radius: 20px;
-	border-radius: 20px;
-	padding: 10px;
-}
-.card div a{
-background: #ff7a87;
-	border: none;
-	border-radius: 20px;
-	box-shadow: 2px 2px 4px black;
-	padding: 0.2em 0.8em;
-	font-size: large;
-	color: white;
-	margin-top: 10px;
-	
+.card div {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	gap: 10px;
+	font-size: 1rem;
+	color: #4a3b32;
+	background-color: #faf6ee;
+	border-radius: 14px;
+	padding: 16px;
 }
 
+.card div a {
+	display: inline-block;
+	background-color: #d94e34;
+	color: #ffffff;
+	border-radius: 25px;
+	padding: 8px 22px;
+	font-size: 0.95rem;
+	font-weight: 600;
+	margin-top: 6px;
+	box-shadow: 0 3px 10px rgba(217, 78, 52, 0.25);
+	transition: background-color 0.25s ease, transform 0.2s ease;
+}
 
- .card div a:hover{
-	 background: blue;
- }
+.card div a:hover {
+	background-color: #b53922;
+	transform: translateY(-2px);
+}
 
-.grang{
+/* --- GRILLE SECONDAIRE --- */
+.grang {
 	display: grid;
-	grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-	gap: 20px;
+	grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+	gap: 24px;
+	max-width: 1200px;
+	margin: 20px auto;
+	padding: 32px 24px;
+}
+
+.blue {
+	background-color: #ffffff;
+	border-radius: 18px;
 	padding: 20px;
-	
-	
-}
-
-.blue{
-	border: 2px solid black;
-	height: auto;
-	box-shadow: 2px 2px 20px white;
-	margin-left: 10px;
 	text-align: center;
-	background: white;
-	border-color: white;
+	box-shadow: 0 6px 20px rgba(43, 29, 20, 0.07);
+	transition: transform 0.25s ease, box-shadow 0.25s ease;
 }
 
-.blue h2{
-	font-size: 1.2rem;
-	padding: 10px;
-	
+.blue:hover {
+	transform: translateY(-5px);
+	box-shadow: 0 12px 26px rgba(43, 29, 20, 0.12);
 }
 
-.blue a:hover{
+.blue h2 {
+	font-size: 1.25rem;
+	color: #2b1d14;
+	margin-bottom: 8px;
+}
+
+.blue a {
+	display: inline-block;
+	color: #d94e34;
+	font-weight: 600;
+	margin-top: 6px;
+	transition: color 0.2s ease;
+}
+
+.blue a:hover {
+	color: #b53922;
 	text-decoration: underline;
 }
 
-.loco{
+.loco {
 	width: 100%;
-	border-radius: 20px;
+	height: 190px;
+	object-fit: cover;
+	border-radius: 12px;
+	margin-top: 12px;
 }
-footer{
-	background: yellow;
-	justify-content: center;
-	height: 10vh;
+
+/* --- FOOTER --- */
+footer {
+	background-color: #2b1d14;
+	color: #f3e9d7;
+	font-size: 0.95rem;
 	display: flex;
 	align-items: center;
+	justify-content: center;
+	text-align: center;
+	min-height: 80px;
+	padding: 20px;
+	margin-top: 40px;
 }
 
-@media(min-width: 768px){
-	
-	.header{
-		display: flex;
+/* --- RESPONSIVE DESKTOP --- */
+@media (min-width: 768px) {
+	.header {
 		flex-direction: row;
+		padding: 16px 48px;
 	}
 
-.card1{
-	
-display: none;
-
-}
-
-	
-	
-	
-	nav a{
-		margin: 10px;
+	.card1 {
+		display: none;
 	}
 }
